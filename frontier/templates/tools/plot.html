@@ -35,12 +35,15 @@
             var min_value=eval("("+js_data+")")["min_value"];
             var title=document.getElementById('graph').getAttribute('title');
             var value= [];
+            var low_gl=[];
+            var high_gl=[];
             var time= [];
-
 
             for(var i in obj){
                 time.push(i);
                 value.push(obj[i]);
+                low_gl.push(70);
+                high_gl.push(126);
             }
 
             var myChart = echarts.init(document.getElementById("box"));
@@ -60,8 +63,8 @@
                 },
                 legend: {
                     x: 'right',
-                    y: 'top',
-                    data:['Blood glucose']
+                    y: 'bottom',
+                    data:['Blood glucose', 'low glucose threshold', 'high glucose threshold']
                 },
                 xAxis: {
                     data: time //true data for x:time
@@ -72,11 +75,42 @@
                 series: [{
                     name: 'Blood glucose',
                     type: 'line',
-                    data: value
+                    data: value,
+                    itemStyle: {
+                        normal: {
+                            color: 'blue',
+                            lineStyle:{
+                                color: 'blue',
+                            }
+                        }
+                    }
+                },
+                {
+                    name: 'low glucose threshold',
+                    type: 'line',
+                    data: low_gl,
+                    itemStyle: {
+                        normal: {
+                            color: 'green',
+                            lineStyle:{
+                                color: 'green',
+                            }
+                        }
+                    }
+                },
+                {
+                    name: 'high glucose threshold',
+                    type: 'line',
+                    data: high_gl,
+                    itemStyle: {
+                        normal: {
+                            color: 'red',
+                            lineStyle:{
+                                color: 'red',
+                            }
+                        }
+                    }
                 }],
-                itemStyle:{
-                    color:'#4181ff'
-                }
             };
 
             myChart.setOption(option);

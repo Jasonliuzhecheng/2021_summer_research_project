@@ -40,13 +40,17 @@
             var keys = [];
             var time = [];
             var idx = 0;
-            var color = ['#ff0000','#00ff00', '#0000ff', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'];
+            var low_gl=[];
+            var high_gl=[];
+            var color = ['#00ff00', '#0000ff', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'];
 
             for (var key in obj) {
                 keys.push(key);
                 var value = [];
                 if (time.length == 0) {
                     for (var timestamp in obj[key]) {
+                        low_gl.push(70);
+                        high_gl.push(126);
                         time.push(timestamp);
                     }
                 }
@@ -68,6 +72,28 @@
                 });
                 idx += 1;
             }
+            series.push({
+                name: 'low glucose threshold',
+                type: 'line',
+                data: low_gl,
+                itemStyle: {
+                    normal: {
+                        color: "green",
+                    },
+                }
+            });
+            keys.push('low glucose threshold');
+            series.push({
+                name: 'high glucose threshold',
+                type: 'line',
+                data: high_gl,
+                itemStyle: {
+                    normal: {
+                        color: "red",
+                    },
+                }
+            });
+            keys.push('high glucose threshold');
 
             var myChart = echarts.init(document.getElementById("box"));
 
@@ -86,7 +112,7 @@
                 },
                 legend: {
                     x: 'right',
-                    y: 'top',
+                    y: 'bottom',
                     data: keys
                 },
                 xAxis: {

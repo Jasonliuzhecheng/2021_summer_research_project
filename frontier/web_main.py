@@ -21,7 +21,7 @@ def about():
 # link to demo
 @app.route("/glucose_analyst/demo")
 def demo():
-    return render_template("demo/demo.html")
+    return render_template("demo.html")
 
 
 # link to average_glucose
@@ -120,11 +120,11 @@ def average_glucose_insulin_method():
                      title = "insulin method level vs average glucose")
 
 
-# link to average_ins_weight
-@app.route("/glucose_analyst/demo/average_ins_weight", methods = ["GET", "POST"])
-def average_ins_weight():
+# link to average_insulin_weight
+@app.route("/glucose_analyst/demo/average_insulin_weight", methods = ["GET", "POST"])
+def average_insulin_weight():
     return demo_main(fields = ['dataset', 'group'], query_func = get_weight_vs_daily_insulin,
-                     demo_html = "demo/average_ins_weight.html", plot_html = "tools/histogram.html",
+                     demo_html = "demo/average_insulin_weight.html", plot_html = "tools/histogram.html",
                      title = 'Daily insulin over different weight groups', x_label='daily insulin(units)')
 
 

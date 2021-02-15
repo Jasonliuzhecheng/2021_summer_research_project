@@ -2,7 +2,7 @@ import os
 import time
 import xlrd
 
-from database import query_field, update_data, insert_one_data, db
+from database import query_field, update_data, insert_one_data, delete_all_date, db
 from tqdm import tqdm
 from collections import defaultdict
 from util import (get_preprocess_config, line_count, line_count_xls, date_to_int, timestamp_to_int, datetime_to_int,
@@ -45,7 +45,7 @@ def preprocess_dataset(dataset_info):
 		dataset = db[dataset_name]
 
 		# delete all the data in the current dataset, may uncomment when developing
-		# database.delete_all_date(dataset)
+		# delete_all_date(dataset)
 
 		# get all the patient id in the current dataset
 		all_patient_id = {patient_id["patient_id"] for patient_id in

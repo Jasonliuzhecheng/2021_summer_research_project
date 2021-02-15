@@ -83,7 +83,7 @@ def get_fast_insulin_time_vs_gl(dataset = "all", interval = "1h", max_duration =
 	                    dataset, "fast_insulin", interval, max_duration)
 
 
-def get_strict_meal_vs_gl(dataset = "all", group = list(), interval = "1h", cycle = "1d"):
+def get_strict_meal_vs_gl(dataset = "all", group = tuple(), interval = "1h", cycle = "1d"):
 	"""
 	statistic the glucose value changes based on time and have strict meal level
 	@:param dataset: the list of query dataset name
@@ -96,7 +96,7 @@ def get_strict_meal_vs_gl(dataset = "all", group = list(), interval = "1h", cycl
 	                    dataset, "StrictMealNow", group, interval, cycle)
 
 
-def get_pre_meal_vs_gl(dataset = "all", group = list(), interval = "1h", cycle = "1d"):
+def get_pre_meal_vs_gl(dataset = "all", group = tuple(), interval = "1h", cycle = "1d"):
 	"""
 	statistic the glucose value changes based on time and have pre meal level
 	@:param dataset: the list of query dataset name
@@ -108,7 +108,7 @@ def get_pre_meal_vs_gl(dataset = "all", group = list(), interval = "1h", cycle =
 	return process_main(get_status_vs_gl, "get_pre_meal_vs_gl", dataset, "PreMealInsNow", group, interval, cycle)
 
 
-def get_trouble_sleep_vs_gl(dataset = "all", group = list(), interval = "1h", cycle = "1d"):
+def get_trouble_sleep_vs_gl(dataset = "all", group = tuple(), interval = "1h", cycle = "1d"):
 	"""
 	statistic the glucose value changes based on time and have troble sleep level
 	@:param dataset: the list of query dataset name
@@ -142,7 +142,7 @@ def get_insulin_method_vs_gl(dataset = "all", interval = "1h", cycle = "1d"):
 	@:return: the json result of the query
 	"""
 	return process_main(get_status_vs_gl, "get_insulin_method_vs_gl",
-	                    dataset, "insulin_method", list(), interval, cycle)
+	                    dataset, "insulin_method", tuple(), interval, cycle)
 
 
 def get_gender(dataset = "all"):
@@ -151,7 +151,7 @@ def get_gender(dataset = "all"):
 	@:param dataset: the list of query dataset name
 	@:return: the json result of the query
 	"""
-	return process_main(get_status_statistic, "get_gender", dataset, "gender", list())
+	return process_main(get_status_statistic, "get_gender", dataset, "gender", tuple())
 
 
 def get_race(dataset = "all"):
@@ -160,7 +160,7 @@ def get_race(dataset = "all"):
 	@:param dataset: the list of query dataset name
 	@:return: the json result of the query
 	"""
-	return process_main(get_status_statistic, "get_race", dataset, "race", list())
+	return process_main(get_status_statistic, "get_race", dataset, "race", tuple())
 
 
 def get_diag_age(dataset = "all", group = (20, 40, 60)):
@@ -179,7 +179,7 @@ def get_low_gl(dataset = "all"):
 	@:param dataset: the list of query dataset name
 	@:return: the json result of the query
 	"""
-	return process_main(get_status_statistic, "get_low_gl", dataset, "low_gl", list())
+	return process_main(get_status_statistic, "get_low_gl", dataset, "low_gl", tuple())
 
 
 def get_bld_pr_sys(dataset = "all", group = (100, 110, 120, 130, 140)):
