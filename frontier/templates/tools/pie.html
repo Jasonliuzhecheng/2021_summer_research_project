@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glucose Analyst</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.4.1.min.js"></script>
+    <script src="/static/echarts.js"></script>
+</head>
+
+<body background="/static/forest.jpg"
+      style="background-repeat:no-repeat ;
+    background-size:100% 100%;
+    background-attachment: fixed;
+    opacity: 70%;
+    height: 600px;">
+    <header>
+        <h1 font-size=40px>Glucose Analyst: Type Ⅰ diabetes analysis based on clinical data </h1>
+        <ul class="NAV">
+            <li id="Main" class="NAV"><a href="/glucose_analyst">Home</a></li>
+            <li class="NAV"><a href="/glucose_analyst/about">About</a></li>
+            <li class="NAV"><a href="/glucose_analyst/demo" rel="index">Demo</a></li>
+        </ul>
+    </header>
+
+    <main>
+
+
+        <span id="graph" d="{{dt}}" title="{{title}}" x_label="{{x_label}}" style="display:none" ></span>
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        </article>
+
+
+        <script type="text/javascript">
+            var js_data = document.getElementById('graph').getAttribute('d');
+            var title=document.getElementById('graph').getAttribute('title');
+            var x_label=document.getElementById('graph').getAttribute('x_label');
+            var obj=eval("("+js_data+")")["data"];
+            var values= [];
+            var keys = [];
+
+            for(var i in obj){
+                keys.push(i);
+                values.push({value: obj[i], name: i});
+            }
+
+            var myChart = echarts.init(document.getElementById("box"));
+
+            var option = {
+                title: {
+                    text: title
+                },
+    		    tooltip : {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#617c85'
+                        }
+                    }
+                },
+    		    color:['#ff0000','#00ff00', '#0000ff', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'],
+    		    legend: {
+                    x: 'right',
+                    y: 'bottom',
+                    type:'plain',
+                    data: keys
+                },
+    		    series: [
+    		        {
+    		            name: x_label,
+    		            type:'pie',
+    		            center:['50%','45%'],
+    		            radius: ['45%', '60%'],
+    		            avoidLabelOverlap: false,
+    		            label: {
+    		                normal: {
+    		                    show: false,
+    		                    position: 'left',
+    		                    formatter: "{b}: {c}({d}%)",
+    		                },
+    		                emphasis: {
+    		                    show: true,
+    		                    textStyle: {
+    		                        fontSize: '12',
+    		                        fontWeight: 'bold'
+    		                    }
+    		                }
+    		            },
+    		            labelLine: {
+    		                normal: {
+    		                    show: true,
+  	               		        length:10,
+  	               		        length2:20
+    		                }
+    		            },
+    		            itemStyle: {
+                            normal: {
+                                borderColor: "#FFFFFF",
+                                borderWidth: 1,
+                                label:{
+                                    show:true,
+                                    formatter:'{d}%'
+                                },
+                            }
+                        },
+    		            data:values
+    		        }
+    		    ]
+            };
+
+            myChart.setOption(option);
+        </script>
+
+
+
+
+    </main>
+</body>
+

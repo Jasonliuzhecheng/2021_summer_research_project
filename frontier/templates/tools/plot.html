@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glucose Analyst</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.4.1.min.js"></script>
+    <script src="/static/echarts.js"></script>
+</head>
+
+<body background="/static/forest.jpg"
+      style="background-repeat:no-repeat ;
+    background-size:100% 100%;
+    background-attachment: fixed;
+    opacity: 70%;
+    height: 600px;">
+    <header>
+        <h1 font-size=40px>Glucose Analyst: Type Ⅰ diabetes analysis based on clinical data </h1>
+        <ul class="NAV">
+            <li id="Main" class="NAV"><a href="/glucose_analyst">Home</a></li>
+            <li class="NAV"><a href="/glucose_analyst/about">About</a></li>
+            <li class="NAV"><a href="/glucose_analyst/demo" rel="index">Demo</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <span id="graph" d="{{data}}" title="{{title}}" style="display:none" ></span>
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        </article>
+
+
+        <script type="text/javascript">
+            var js_data = document.getElementById('graph').getAttribute('d');
+            var obj=eval("("+js_data+")")["data"];
+            var min_value=eval("("+js_data+")")["min_value"];
+            var title=document.getElementById('graph').getAttribute('title');
+            var value= [];
+            var time= [];
+
+
+            for(var i in obj){
+                time.push(i);
+                value.push(obj[i]);
+            }
+
+            var myChart = echarts.init(document.getElementById("box"));
+
+            var option = {
+                title: {
+                    text: title
+                },
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        label: {
+                            backgroundColor: '#617c85'
+                        }
+                    }
+                },
+                legend: {
+                    x: 'right',
+                    y: 'top',
+                    data:['Blood glucose']
+                },
+                xAxis: {
+                    data: time //true data for x:time
+                },
+                yAxis: {
+                    min: min_value
+                },
+                series: [{
+                    name: 'Blood glucose',
+                    type: 'line',
+                    data: value
+                }],
+                itemStyle:{
+                    color:'#4181ff'
+                }
+            };
+
+            myChart.setOption(option);
+        </script>
+
+
+
+
+    </main>
+</body>
+
+</html>
+
+    <main>
+
+
+        <span id="graph" d="{{a}}" style="display:none" ></span>
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        </article>
+
+
+        <script type="text/javascript">
+            var js_data = document.getElementById('graph').getAttribute('d');
+            var obj=eval("("+js_data+")")["data"];
+            var min_value=obj["min_value"]
+            var value= [];
+            var time= [];
+
+
+            for(var i in obj){
+                time.push(i);
+                value.push(obj[i]);
+            }
+
+            var myChart = echarts.init(document.getElementById("box"));
+
+            var option = {
+                title: {
+                    text: {{title}}
+                },
+                tooltip : {
+                    trigger: 'axis',
+                    axisPointer: {
+                      type: 'cross',
+                      label: {
+                        backgroundColor: '#617c85'
+                      }
+                    }
+                  },
+                legend: {
+                    x: 'right',
+                    y: 'top',
+                    data:['Blood glucose']
+                        },
+                    xAxis: {
+                        data: time //true data for x:time
+                            },
+                yAxis: {
+                    min: min_value
+                },
+                series: [{
+                    name: 'Blood glucose',
+                    type: 'line',
+                    data: value
+                }],
+                itemStyle:{
+                    color:'#4181ff'
+                }
+            };
+
+            myChart.setOption(option);
+        </script>
+
+
+
+
+    </main>
+</body>
+
+</html>

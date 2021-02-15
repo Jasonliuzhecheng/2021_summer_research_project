@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glucose Analyst</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.4.1.min.js"></script>
+    <script src="/static/echarts.js"></script>
+</head>
+
+<body background="/static/forest.jpg"
+      style="background-repeat:no-repeat ;
+    background-size:100% 100%;
+    background-attachment: fixed;
+    opacity: 70%;
+    height: 600px;">
+    <header>
+        <h1 font-size=40px>Glucose Analyst: Type Ⅰ diabetes analysis based on clinical data </h1>
+        <ul class="NAV">
+            <li id="Main" class="NAV"><a href="/glucose_analyst">Home</a></li>
+            <li class="NAV"><a href="/glucose_analyst/about">About</a></li>
+            <li class="NAV"><a href="/glucose_analyst/demo" rel="index">Demo</a></li>
+        </ul>
+    </header>
+
+
+    <main>
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+            <form method="post">
+                dataset: <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b><br>
+                interval: <input type="text" name="interval" value="1h"><br>
+                max duration: <input type="text" name="max_duration" value="1d"><br>
+                <input type="submit" value="submit">
+            </form>
+            {%  for message in get_flashed_messages() %}
+                {{message}}}
+            {% endfor %}
+            <br><br><br>
+        </article>
+    </main>
+
+
+
+
+
+    <footer>
+        <div font-size=8px>Copyright: This website app is built for academic research purpose only. The background
+            image is a free photo downloaded from www.pexels.com.. The ownership of the photo is retained by the author Brady Knoll.  </div>
+    </footer>
+
+    </body>
+</html>

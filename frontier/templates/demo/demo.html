@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glucose Analyst</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/jquery-3.4.1.min.js"></script>
+    <script src="/static/echarts.js"></script>
+</head>
+
+<body background="/static/forest.jpg"
+      style="background-repeat:no-repeat ;
+    background-size:100% 100%;
+    background-attachment: fixed;
+    opacity: 70%;
+    height: 600px;">
+    <header>
+        <h1 font-size=40px>Glucose Analyst: Type Ⅰ diabetes analysis based on clinical data </h1>
+        <ul class="NAV">
+            <li id="Main" class="NAV"><a href="/glucose_analyst">Home</a></li>
+            <li class="NAV"><a href="/glucose_analyst/about">About</a></li>
+            <li class="NAV"><a href="/glucose_analyst/demo" rel="index">Demo</a></li>
+        </ul>
+    </header>
+
+
+    <main>
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+            status statistic:<br>
+            <a href="./demo/gender_statistic" ><button class="button small yellow">gender statistic</button></a>
+            <a href="./demo/race_statistic" ><button class="button small yellow">race statistic</button></a>
+            <a href="./demo/weight_statistic" ><button class="button small yellow">weight statistic</button></a>
+            <a href="./demo/diagnostic_age_statistic" ><button class="button small yellow">diagnostic age statistic</button></a>
+            <a href="./demo/systolic_blood_pressure_statistic" ><button class="button small yellow">systolic blood pressure statistic</button></a>
+            <a href="./demo/diastolic_blood_pressure_statistic" ><button class="button small yellow">diastolic blood pressure statistic</button></a>
+            <a href="./demo/low_glucose_statistic" ><button class="button small yellow">low glucose statistic</button></a>
+            <a href="./demo/daily_insulin_statistic" ><button class="button small yellow">daily insulin statistic</button></a>
+            <a href="./demo/breakfast_ratio_statistic" ><button class="button small yellow">breakfast ratio statistic</button></a>
+            <a href="./demo/lunch_ratio_statistic" ><button class="button small yellow">lunch ratio statistic</button></a>
+            <a href="./demo/dinner_ratio_statistic" ><button class="button small yellow">dinner ratio statistic</button></a>
+            <br><br>
+
+            glucose statistic:<br>
+            <a href="./demo/average_glucose" ><button class="button small yellow">average glucose</button></a>
+            <a href="./demo/average_glucose_exercise" ><button class="button small yellow">average glucose exercise</button></a>
+            <a href="./demo/average_glucose_exercise_status" ><button class="button small yellow">average glucose exercise status</button></a>
+            <a href="./demo/average_glucose_insulin" ><button class="button small yellow">average glucose insulin</button></a>
+            <a href="./demo/average_glucose_fast_insulin" ><button class="button small yellow">average glucose fast insulin</button></a>
+            <a href="./demo/average_glucose_insulin_method" ><button class="button small yellow">average glucose insulin method</button></a>
+            <a href="./demo/average_glucose_meal" ><button class="button small yellow">average glucose meal</button></a>
+            <a href="./demo/average_glucose_snack" ><button class="button small yellow">average glucose snack</button></a>
+            <a href="./demo/average_glucose_strict_meal" ><button class="button small yellow">average glucose strict meal</button></a>
+            <a href="./demo/average_glucose_pre_meal" ><button class="button small yellow">average glucose pre meal</button></a>
+            <a href="./demo/average_glucose_trouble_sleep" ><button class="button small yellow">average glucose trouble sleep</button></a>
+            <a href="./demo/average_glucose_weight" ><button class="button small yellow">average glucose weight</button></a>
+            <br><br>
+
+            other:<br>
+            <a href="./demo/average_ins_weight" ><button class="button small yellow">average ins weight</button></a>
+
+        </article>
+    </main>
+
+
+
+
+
+    <footer>
+        <div font-size=8px>Copyright: This website app is built for academic research purpose only. The background
+            image is a free photo downloaded from www.pexels.com.. The ownership of the photo is retained by the author Brady Knoll.  </div>
+    </footer>
+
+    </body>
+</html>
