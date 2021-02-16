@@ -25,17 +25,23 @@
 
 
     <main>
-        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
-                dataset: <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
-                interval: <input type="text" name="interval" value="1h"><br>
-                cycle: <input type="text" name="cycle" value="1d"><br>
-                <input type="submit" value="submit">
+                <p class="txt">Different ways of insulin treatment</p>
+                <span class="txt">Dataset:</span><br>
+                <div class="align">
+                    <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
+                    <p class="txt">interval:</p> <input type="text" name="interval" value="1h"><br>
+                    <p class="txt">cycle:</p> <input type="text" name="cycle" value="1d"><br>
+                    <input type="submit" value="submit" class="button yellow small">
+                </div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
-            <br><br><br>
+            <br>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the performance of two different insulin treatment-injection and pump. As the pump method can always deliver insulin to the patient at any time. This query displays the result on a relative timeline(after the injection of insulin).Input integers followed by m, h or d(m for minutes, h for hours and d for days).</textarea>
+        </div>
         </article>
     </main>
 

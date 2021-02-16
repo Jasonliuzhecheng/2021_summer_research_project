@@ -25,20 +25,25 @@
 
 
     <main>
-        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
-                dataset:
-                <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b>
-                <input type="checkbox" name="dataset" value="Tamborlane2008" checked="checked"><b>Tamborlane2008</b><br>
-                group divider: <input type="text" name="group"><br>
-                interval: <input type="text" name="interval" value="1h"><br>
-                cycle: <input type="text" name="cycle" value="1d"><br>
-                <input type="submit" value="submit">
+                <p class="txt">Effect of different qualities of sleep on glucose level</p>
+                <span class="txt">Dataset:</span><br>
+                <div class="align">
+                    <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b>
+                    <input type="checkbox" name="dataset" value="Tamborlane2008" checked="checked"><b>Tamborlane2008</b><br>
+                    <p class="txt">group divider: </p><input type="text" name="group"><br>
+                    <p class="txt">interval: </p> <input type="text" name="interval" value="1h"><br>
+                    <p class="txt">cycle: </p> <input type="text" name="cycle" value="1d"><br>
+                    <input type="submit" value="submit" class="button yellow small">
+                </div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
-            <br><br><br>
+            <br>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the average glucose level of different types of participants. Participants are separated by their qualities of sleep. If they cannot sleep well at night, then they have a bad sleep quality.  1:Very bad 2:Bad 3: Not good 4:Normal 5: Good. Input integers followed by m, h or d(m for minutes, h for hours and d for days).</textarea>
+        </div>
         </article>
     </main>
 

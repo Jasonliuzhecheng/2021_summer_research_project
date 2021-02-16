@@ -7,7 +7,7 @@ def get_fields(fields):
 		if field == "dataset": result[field] = request.form.getlist(field)
 		elif field == "group":
 			data = request.form.get(field)
-			result[field] = (float(i) for i in data.split(" ")) if len(data) != 0 else tuple()
+			result[field] = tuple(float(i) for i in data.split(" ")) if len(data) != 0 else tuple()
 		else: result[field] = request.form.get(field)
 	return result
 

@@ -25,21 +25,26 @@
 
 
     <main>
-        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
-                dataset:<br>
-                <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
-                <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b><br>
-                <input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br>
-                <input type="checkbox" name="dataset" value="Tsalikian2005" checked="checked"><b>Tsalikian2005</b><br>
-                <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
-                group divider: <input type="text" name="group" value="30 60 90"><br>
-                <input type="submit" value="submit">
+                <p class="txt">Average daily insulin for different weight groups</p>
+                <span class="txt">Dataset:</span><br>
+                <div class="align">
+                    <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
+                    <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b><br>
+                    <input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br>
+                    <input type="checkbox" name="dataset" value="Tsalikian2005" checked="checked"><b>Tsalikian2005</b><br>
+                    <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
+                    <p class="txt">group divider: </p> <input type="text" name="group" value="30 60 90"><br>
+                    <input type="submit" value="submit" class="button yellow small">
+                </div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
-            <br><br><br>
+            <br>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the daily insulin intake for different weight groups. Insulin is measured in units.</textarea>
+        </div>
         </article>
     </main>
 

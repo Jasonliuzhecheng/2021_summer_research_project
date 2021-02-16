@@ -25,18 +25,23 @@
 
 
     <main>
-        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
-                dataset:<br>
-                <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b><br>
-                <input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br>
-                group divider: <input type="text" name="group" value="10 15"><br>
-                <input type="submit" value="submit">
+                <p class="txt">Distribution for pre-meal insulin/carbohydrate ratio(breakfast)</p>
+                <span class="txt">Dataset:</span><br>
+                <div class="align">
+                    <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b><br>
+                    <input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br>
+                    <p class="txt">group divider:</p><input type="text" name="group" value="10 15"><br>
+                    <input type="submit" value="submit" class="button yellow small">
+                </div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
-            <br><br><br>
+            <br>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the distribution for participants'pre-breakfast insulin/carbohydrate ratios. Insulin intake is measured in units and carbohydrates are measured in grams.</textarea>
+            </div>
         </article>
     </main>
 

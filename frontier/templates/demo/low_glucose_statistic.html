@@ -25,17 +25,22 @@
 
 
     <main>
-        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6">
             <form method="post">
-                dataset:<br>
-                <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
-                <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
-                <input type="submit" value="submit">
+                <p class="txt">Glucose level for the appearance of hypoglycemic symptoms</p>
+                <span class="txt">Dataset:</span><br>
+                <div class="align">
+                    <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
+                    <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
+                    <input type="submit" value="submit" class = "button small yellow">
+                </div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
-            <br><br><br>
+            <br>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query collects the glucose ranges in which different participants start to have obvious hypoglycemic symptoms and shows the distribution. Medically, glucose level under 70mg/dL would be defined as hypoglycemia.</textarea>
+        </div>
         </article>
     </main>
 

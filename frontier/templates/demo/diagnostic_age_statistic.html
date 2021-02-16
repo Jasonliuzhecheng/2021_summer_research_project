@@ -25,18 +25,23 @@
 
 
     <main>
-        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: bisque ">
+        <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
-                dataset:
-                <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b>
-                <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
-                group divider: <input type="text" name="group" value="20 40 60"><br>
-                <input type="submit" value="submit">
+                <p class="txt">Distribution for the age of diagnosis</p>
+                <span class="txt">Dataset:</span><br>
+                <div class="align">
+                    <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b><br>
+                    <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
+                    <p class="txt">group divider:</p><input type="text" name="group" value="20 40 60"><br>
+                    <input type="submit" value="submit" class="button small yellow">
+                </div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
-            <br><br><br>
+            <br>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query collects the ages when participants were diagnosed with type I diabetes and shows the distribution</textarea>
+            </div>
         </article>
     </main>
 
