@@ -28,19 +28,22 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
                 <p class="txt">Average glucose </p>
-                <span class="txt">Dataset:</span><br>
-                <div class="align">
+                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
                     <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked" ><b>Aleppo2017</b><br>
+                <div class="align">
                     <input type="checkbox" name="dataset" value="Anderson2016" checked="checked" ><b>Anderson2016</b><br>
                     <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked" ><b>Buckingham2007</b><br>
                     <input type="checkbox" name="dataset" value="Chase2005" checked="checked" ><b>Chase2005</b><br>
                     <input type="checkbox" name="dataset" value="Tamborlane2008" checked="checked" ><b>Tamborlane2008</b><br>
                     <input type="checkbox" name="dataset" value="Tsalikian2005" checked="checked" ><b>Tsalikian2005</b><br>
                     <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked" ><b>Weinstock2016</b><br>
-                    <p class="txt"> interval: </p> <input type="text" name="interval" value="5m" ><br>
-                    <p class="txt">cycle: </p><input type="text" name="cycle" value="1d"><br>
-                    <input type="submit" value="submit" class = "button small yellow">
                 </div>
+                <b>Interval:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;&thinsp;
+                    <input type="text" name="interval" value="5m" ><br>
+                <b>Cycle:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;
+                    <input type="text" name="cycle" value="1d"><br>
+                <div class="align"><input type="submit" value="submit" class = "button small yellow"></div>
+
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}

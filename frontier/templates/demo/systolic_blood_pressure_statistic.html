@@ -28,13 +28,11 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6">
             <form method="post">
                 <p class="txt">Distribution for systolic blood pressure</p>
-                <span class="txt">Dataset:</span><br>
-                <div class="align">
+                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
                     <input type="checkbox" name="dataset" value="Tamborlane2008" checked="checked"><b>Tamborlane2008</b><br>
-                    <p class="txt">group divider:</p><input type="text" name="group" value="100 110 120 130 140"><br>
-                    <input type="submit" value="submit" class="button yellow small">
-
-                </div>
+                <b>Group Divider:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;
+                    <input type="text" name="group" value="100 110 120 130 140"><br>
+                <div class="align"><input type="submit" value="submit" class="button yellow small"></div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}

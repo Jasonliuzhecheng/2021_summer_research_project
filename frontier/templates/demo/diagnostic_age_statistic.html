@@ -28,13 +28,12 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
                 <p class="txt">Distribution for the age of diagnosis</p>
-                <span class="txt">Dataset:</span><br>
-                <div class="align">
-                    <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b><br>
+                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+                    <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b>
                     <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
-                    <p class="txt">group divider:</p><input type="text" name="group" value="20 40 60"><br>
-                    <input type="submit" value="submit" class="button small yellow">
-                </div>
+                <b>Group Divider:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;
+                    <input type="text" name="group" value="20 40 60"><br>
+                <div class="align"><input type="submit" value="submit" class="button small yellow"></div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}

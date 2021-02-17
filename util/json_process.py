@@ -26,6 +26,7 @@ def get_pie_plot_json(result):
 def combine_pie_plot_json(separate_results):
 	json_str = {"type": "pie_plot", "data": defaultdict(lambda: 0)}
 	for result in separate_results:
+		if not isinstance(result, str): result = str(result)
 		result_str = json.loads(result)
 		assert result_str["type"] == "pie_plot"
 		for key in result_str["data"]:

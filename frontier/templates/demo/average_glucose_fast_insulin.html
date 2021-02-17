@@ -27,14 +27,14 @@
     <main>
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
-                <p class="txt">Effectiveness of fast insulin</p>
-                <span class="txt">Dataset:</span><br>
-                <div class="align">
+                <p class="txt">Fast insulin effect</p>
+                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
                     <input type="checkbox" name="dataset" value="D1NAMO" checked="checked"><b>D1NAMO</b><br>
-                    <p class="txt">interval:</p> <input type="text" name="interval" value="1h"><br>
-                    <p class="txt">max duration:</p> <input type="text" name="max_duration" value="1d"><br>
-                    <input type="submit" value="submit" class="button yellow small">
-                </div>
+                <b>Interval:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;&thinsp;
+                    <input type="text" name="interval" value="1h"><br>
+                <b>Max Duration:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&thinsp;
+                    <input type="text" name="max_duration" value="1d"><br>
+                <div class="align"><input type="submit" value="submit" class="button yellow small"></div>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
