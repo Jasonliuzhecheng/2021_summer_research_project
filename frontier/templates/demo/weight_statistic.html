@@ -28,23 +28,42 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
                 <p class="txt">Distribution of weights</p>
-                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
-                <div class="align">
-                    <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b><br>
-                    <input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br>
-                    <input type="checkbox" name="dataset" value="Tsalikian2005" checked="checked"><b>Tsalikian2005</b><br>
-                    <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
-                </div>
-                <b>Group Divider:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;
-                    <input type="text" name="group" value="30 60 90"><br>
-                <div class="align"><input type="submit" value="submit" class="button yellow small"></div>
+                <table>
+                    <tr>
+                        <td><b>Dataset:</b></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Buckingham2007"><b>Buckingham2007</b></div> </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b></div> </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Tsalikian2005" checked="checked"><b>Tsalikian2005</b></div> </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b></div> </td>
+                    </tr>
+                    <tr>
+                        <td><b>Group Divider:</b></td>
+                        <td><div class="gd"><input type="text" name="group" value="40 60 80"><br></div> </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><br><div class="gd"><input type="submit" value="submit" class="button yellow small"></div></td>
+                    </tr>
+                </table>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
             <br>
-            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the distribution for weights.</textarea>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the distribution for weights(measured in kg).Enter integers followed by space to see different groups. For example, 30 60 means 0-30,30-60 and above 60. </textarea>
         </div>
         </article>
     </main>

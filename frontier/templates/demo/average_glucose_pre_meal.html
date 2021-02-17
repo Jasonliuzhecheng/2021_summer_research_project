@@ -27,22 +27,35 @@
     <main>
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
-                <p class="txt">Effect of different qualities of pre meal on glucose level</p>
-                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b><br>
-                <b>Group Divider:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;
-                    <input type="text" name="group"><br>
-                <b>Interval:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;&thinsp;
-                    <input type="text" name="interval" value="1h"><br>
-                <b>Cycle:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;
-                    <input type="text" name="cycle" value="1d"><br>
-                <div class="align"><input type="submit" value="submit" class="button yellow small"></div>
+                <p class="txt">Effect of knowing pre meal insulin intake on glucose level</p>
+                <table>
+                    <tr>
+                        <td><b>Dataset:</b></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td><b>Group Divider:</b></td>
+                        <td><div class="gd"><input type="text" name="group" value="2 3"><br></div> </td>
+                    </tr>
+                    <tr>
+                        <td><b>Interval:</b></td>
+                        <td><div class="gd"><input type="text" name="interval" value="30m"><br></div> </td>
+                    </tr>
+                    <tr>
+                        <td><b>Cycle:</b></td>
+                        <td><div class="gd"><input type="text" name="cycle" value="1d"><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><br><div class="gd"><input type="submit" value="submit" class="button yellow small"></div></td>
+                    </tr>
+                </table>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
             <br>
-            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the average glucose level. Input integers followed by m, h or d(m for minutes, h for hours and d for days).</textarea>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the average glucose level(mg/dL) of different types of participants.Participants are separated by the degree of understanding that how many insulin should they inject before meal to cover the carbohydrates intake. 1:Very bad 2:Bad 3: Not good 4:Normal 5: Good. Input integers followed by m, h or d(m for minutes, h for hours and d for days).Enter integers 1-5 to divider to see aggregate effect of different groups. For example, 2 means 1-2 as one group and 3,4,5 as one group.</textarea>
         </div>
         </article>
     </main>

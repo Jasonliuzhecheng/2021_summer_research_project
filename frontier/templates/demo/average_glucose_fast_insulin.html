@@ -28,19 +28,30 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
                 <p class="txt">Fast insulin effect</p>
-                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="dataset" value="D1NAMO" checked="checked"><b>D1NAMO</b><br>
-                <b>Interval:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;&thinsp;
-                    <input type="text" name="interval" value="1h"><br>
-                <b>Max Duration:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&thinsp;
-                    <input type="text" name="max_duration" value="1d"><br>
-                <div class="align"><input type="submit" value="submit" class="button yellow small"></div>
+                <table>
+                    <tr>
+                        <td><b>Dataset:</b></td>
+                        <td><div class="max"><input type="checkbox" name="dataset" value="D1NAMO" checked="checked"><b>D1NAMO</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td><b>Interval:</b></td>
+                        <td><div class="max"><input type="text" name="interval" value="5m"><br></div></td>
+                    </tr>
+                    <tr>
+                        <td><b>Max Duration:</b></td>
+                        <td><div class="max"><input type="text" name="max_duration" value="4h"><br></div> </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><br><div class="max"><input type="submit" value="submit" class="button yellow small"></div></td>
+                    </tr>
+                </table>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
             <br>
-            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the effectiveness of fast insulin on glucose level. It displays the result on a relative timeline(after insulin injection) and examines when the effect kicks in. Input integers followed by m, h or d(m for minutes, h for hours and d for days).</textarea>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the effectiveness of fast insulin on glucose level(mg/dL). It displays the result on a relative timeline(after insulin injection) and examines when the effect kicks in. Input integers followed by m, h or d(m for minutes, h for hours and d for days).</textarea>
         </div>
         </article>
     </main>

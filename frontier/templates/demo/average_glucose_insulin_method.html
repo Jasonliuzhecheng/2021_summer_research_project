@@ -28,13 +28,24 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
                 <p class="txt">Different ways of insulin treatment</p>
-                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
-                <b>Interval:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;&thinsp;
-                    <input type="text" name="interval" value="1h"><br>
-                <b>Cycle:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&thinsp;&thinsp;
-                    <input type="text" name="cycle" value="1d"><br>
-                <div class="align"><input type="submit" value="submit" class="button yellow small"></div>
+                <table>
+                    <tr>
+                        <td><b>Dataset:</b></td>
+                        <td><div class="align"><input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td><b>Interval:</b></td>
+                        <td><div class="align"><input type="text" name="interval" value="30m"><br></div></td>
+                    </tr>
+                    <tr>
+                        <td><b>Cycle:</b></td>
+                        <td><div class="align"><input type="text" name="cycle" value="1d"><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><br><div class="align"><input type="submit" value="submit" class="button yellow small"></div></td>
+                    </tr>
+                </table>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}

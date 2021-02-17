@@ -28,17 +28,41 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
                 <p class="txt">Gender distribution</p>
-                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b><br>
-                <div class="align">
-                    <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
-                    <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b><br>
-                    <input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br>
-                    <input type="checkbox" name="dataset" value="Tamborlane2008" checked="checked"><b>Tamborlane2008</b><br>
-                    <input type="checkbox" name="dataset" value="Tsalikian2005" checked="checked"><b>Tsalikian2005</b><br>
-                    <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
-                    <input type="submit" value="submit" class = "button small yellow">
-                </div>
+                <table>
+                    <tr>
+                        <td><b>Dataset:</b></td>
+                        <td><div class="one" ><input type="checkbox" name="dataset" value="Aleppo2017" checked="checked"><b>Aleppo2017</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    <td><div class="one"><input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    <td><div class="one"><input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="one"><input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="one"><input type="checkbox" name="dataset" value="Tamborlane2008" checked="checked"><b>Tamborlane2008</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="one"><input type="checkbox" name="dataset" value="Tsalikian2005" checked="checked"><b>Tsalikian2005</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="one"><input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><br><div class="one"><input type="submit" value="submit" class = "button small yellow"></div></td>
+                    </tr>
+
+                </table>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}

@@ -28,17 +28,26 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6">
             <form method="post">
                 <p class="txt">Distribution for systolic blood pressure</p>
-                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="dataset" value="Tamborlane2008" checked="checked"><b>Tamborlane2008</b><br>
-                <b>Group Divider:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;
-                    <input type="text" name="group" value="100 110 120 130 140"><br>
-                <div class="align"><input type="submit" value="submit" class="button yellow small"></div>
+                <table>
+                    <tr>
+                        <td><b>Dataset:</b></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Tamborlane2008" checked="checked"><b>Tamborlane2008</b><br></div></td>
+                    </tr>
+                     <tr>
+                        <td><b>Group Divider:</b></td>
+                        <td><div class="gd"><input type="text" name="group" value="120 130 140 160"><br></div></td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td><br><div class="gd"><input type="submit" value="submit" class="button yellow small"></div></td>
+                     </tr>
+                 </table>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
             <br>
-            <div align="center" class="txt">Description<br> <textarea class="dp" >This query groups participants'systolic blood pressure with certain ranges and returns the distribution.</textarea>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query groups participants'systolic blood pressure with certain ranges and returns the distribution.Enter integers separated by space as group dividers. For example,100 110 means 0-100,100-110 and above 110.</textarea>
             </div>
         </article>
     </main>

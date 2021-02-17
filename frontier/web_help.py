@@ -7,7 +7,7 @@ def get_fields(fields):
 		if field == "dataset": result[field] = request.form.getlist(field)
 		elif field == "group":
 			data = request.form.get(field)
-			result[field] = tuple(float(i) for i in data.split(" ")) if len(data) != 0 else tuple()
+			result[field] = tuple(int(i) for i in data.split(" ")) if len(data) != 0 else tuple()
 		else: result[field] = request.form.get(field)
 	return result
 
@@ -18,6 +18,7 @@ def demo_main(fields, demo_html, plot_html, query_func, title, x_label=None):
 		for field in fields:
 			if not isinstance(fields[field], tuple) and not fields[field]:
 				flash("Expected parameters {} missing".format(field))
+				return render_template(demo_html)
 		else:
 			data = query_func(**fields)
 			if x_label is None:

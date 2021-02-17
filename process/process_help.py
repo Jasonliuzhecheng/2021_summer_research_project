@@ -19,17 +19,35 @@ def get_group(divides: list or tuple, value: str or int or float):
 	# if the divides is empty, return the value.
 	if len(divides) == 0: return value
 
+	digit = int(math.log(divides[-1], 10)) + 1
+
 	# get the divide_idx.
 	# ensure divides[divide_idx] >= value or the divide_idx reach the end of divides
 	divide_idx = 0
 	while divide_idx < len(divides) and float(value) > divides[divide_idx]: divide_idx += 1
-	
-	# if value <= divides[0]
-	if divide_idx == 0: return "0-{}".format(int(divides[0]))
-	# if value > divides[-1]
-	elif divide_idx >= len(divides): return ">{}".format(int(divides[-1]))
-	# if value between two divides
-	else: return "{}-{}".format(int(divides[divide_idx - 1]) + 1, int(divides[divide_idx]))
+
+	# ASSUMPTION: the digit will not bigger than 3
+	if digit == 1:
+		# if value <= divides[0]
+		if divide_idx == 0: return "{:0>1d}-{:0>1d}".format(0, int(divides[0]))
+		# if value > divides[-1]
+		elif divide_idx >= len(divides): return ">{:0>1d}".format(int(divides[-1]))
+		# if value between two divides
+		else: return "{:0>1d}-{:0>1d}".format(int(divides[divide_idx - 1]) + 1, int(divides[divide_idx]))
+	elif digit == 2:
+		# if value <= divides[0]
+		if divide_idx == 0: return "{:0>2d}-{:0>2d}".format(0, int(divides[0]))
+		# if value > divides[-1]
+		elif divide_idx >= len(divides): return ">{:0>2d}".format(int(divides[-1]))
+		# if value between two divides
+		else: return "{:0>2d}-{:0>2d}".format(int(divides[divide_idx - 1]) + 1, int(divides[divide_idx]))
+	elif digit == 3:
+		# if value <= divides[0]
+		if divide_idx == 0: return "{:0>3d}-{:0>3d}".format(0, int(divides[0]))
+		# if value > divides[-1]
+		elif divide_idx >= len(divides): return ">{:0>3d}".format(int(divides[-1]))
+		# if value between two divides
+		else: return "{:0>3d}-{:0>3d}".format(int(divides[divide_idx - 1]) + 1, int(divides[divide_idx]))
 
 
 def get_functiona_all_dataset(function_name: str):

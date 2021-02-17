@@ -185,8 +185,29 @@ input.small{
 }
 
 div.align{
-     padding-left:225px;
+     padding-left:180px;
 }
+
+div.max{
+    padding-left: 130px;
+}
+
+div.ex{
+    padding-left: 120px;
+}
+
+div.one{
+    padding-left: 170px;
+}
+
+div.gd{
+    padding-left: 120px;
+}
+
+
+
+
+
 
 .dp{
     width: 500px;

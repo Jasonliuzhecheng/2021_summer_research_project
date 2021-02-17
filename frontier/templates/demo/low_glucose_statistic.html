@@ -28,12 +28,20 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6">
             <form method="post">
                 <p class="txt">Glucose level for the appearance of hypoglycemic symptoms</p>
-                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b><br>
-                <div class="align">
-                    <input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b><br>
-                    <input type="submit" value="submit" class = "button small yellow">
-                </div>
+                 <table>
+                    <tr>
+                        <td><b>Dataset:</b></td>
+                        <td><div class="one"><input type="checkbox" name="dataset" value="Anderson2016" checked="checked"><b>Anderson2016</b></div></td>
+                    </tr>
+                     <tr>
+                         <td></td>
+                        <td><div class="one"><input type="checkbox" name="dataset" value="Weinstock2016" checked="checked"><b>Weinstock2016</b></div></td>
+                    </tr>
+                     <tr>
+                     <td></td>
+                    <td><br><div class="one"><input type="submit" value="submit" class = "button small yellow"></div></td>
+                    </tr>
+                 </table>
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}

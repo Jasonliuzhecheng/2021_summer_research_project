@@ -28,18 +28,31 @@
         <article id="box" style="width: 600px;height:500px;margin-left:400px; background-color: #d6d6d6 ">
             <form method="post">
                 <p class="txt">Distribution for pre-meal insulin/carbohydrate ratio(breakfast)</p>
-                <b>Dataset:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
-                    <input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b>
-                    <input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br>
-                <b>Group Divider:</b>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;&thinsp;
-                    <input type="text" name="group" value="10 15"><br>
-                <div class="align"><input type="submit" value="submit" class="button yellow small"></div>
+                <table>
+                    <tr>
+                        <td><b>Dataset:</b></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Buckingham2007" checked="checked"><b>Buckingham2007</b></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="gd"><input type="checkbox" name="dataset" value="Chase2005" checked="checked"><b>Chase2005</b><br></div></td>
+                    </tr>
+                    <tr>
+                        <td><b>Group Divider:</b></td>
+                        <td><div class="gd"><input type="text" name="group" value="10 15"><br></div></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><br><div class="gd"><input type="submit" value="submit" class="button yellow small"></div></td>
+                    </tr>
+                </table>
+
             </form>
             {%  for message in get_flashed_messages() %}
                 {{message}}}
             {% endfor %}
             <br>
-            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the distribution for participants'pre-breakfast insulin/carbohydrate ratios. Insulin intake is measured in units and carbohydrates are measured in grams.</textarea>
+            <div align="center" class="txt">Description<br> <textarea class="dp" >This query shows the distribution for participants'pre-breakfast insulin/carbohydrate ratios. Insulin intake is measured in units and carbohydrates are measured in grams.Enter integers separated by space as group dividers. For example,10 15 means 0-10, 10-15 and above 15.</textarea>
             </div>
         </article>
     </main>
